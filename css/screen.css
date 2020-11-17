@@ -2,6 +2,7 @@
 #FONTS
 \*------------------------------------*/
 
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -10,6 +11,8 @@
     /* colors */
     --color-alpha-light: MEDIUMSLATEBLUE;
     --color-alpha: SLATEBLUE;
+    --color-bg:#F0F0F7;
+    --color-text: #43425D;
 
     --color-neutral-light: LIGHTSLATEGRAY;
     --color-neutral: SLATEGRAY;
@@ -21,6 +24,15 @@
 
     /* transitions */
     --transition-alpha: .1s;
+
+
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline);
+    --global-whitespace-xs: calc(var(--global-baseline) * 2);
+    --global-whitespace-sm: calc(var(--global-baseline) * 3);
+    --global-whitespace-md: calc(var(--global-baseline) * 4);
+    --global-whitespace-lg: calc(var(--global-baseline) * 5);
+    --global-whitespace-xl: calc(var(--global-baseline) * 6);
 }
 
 /*------------------------------------*\
@@ -34,14 +46,14 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    color: var(--color-text);
 }
 
 *,
@@ -98,20 +110,20 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +131,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,12 +142,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace-md);
 }
 
 li ul,
@@ -289,11 +301,35 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
-/*
-    Component: Logo
-    ---
-    Website main logo
-*/
+.c-app{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.c-app__logo{
+    background: #3b3b53;
+    padding: 25px;
+}
+.c-app__logo h1{
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--color-alpha-light);
+    margin: 0;
+}
+
+.c-app__topbar{
+    background: white;
+}
+
+.c-app__sidebar{
+    background: #43425d;
+}
+
+.c-app__main{
+    background: #f0f0f7;
+}
 
 /*------------------------------------*\
 #UTILITIES
