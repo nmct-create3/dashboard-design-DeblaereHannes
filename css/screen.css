@@ -13,6 +13,7 @@
     --color-alpha: SLATEBLUE;
     --color-bg:#F0F0F7;
     --color-text: #43425D;
+    --color-alpha-dark: darkslateblue;
 
     --color-neutral-light: LIGHTSLATEGRAY;
     --color-neutral: SLATEGRAY;
@@ -302,6 +303,7 @@ input::placeholder {
 \*------------------------------------*/
 
 .c-app{
+    --c-capp__topbar-height: calc(var(--global-baseline) * 14);
     min-height: 100vh;
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -325,11 +327,67 @@ input::placeholder {
 
 .c-app__sidebar{
     background: #43425d;
+    position: sticky;
+    top: var(--c-capp__topbar-height);
+    height: calc(100vh - var(--c-capp__topbar-height));
+    overflow: auto;
 }
 
 .c-app__main{
     background: #f0f0f7;
 }
+
+.c-app__topbar,
+.c-app__logo{
+    position: sticky;
+    top: 0;
+}
+
+/* .c-app__sidebar,
+.c-app__main{
+    height: calc(100vh - var(--c-capp__topbar-height));
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+
+.c-main-nav__item{
+    margin-bottom: 0;
+}
+.c-main-nav__item{
+    margin: var(--global-baseline) 0;
+}
+
+.c-main-nav__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    font-size: 15px;
+    line-height: calc(var(--global-baseline) * 4);
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--color-alpha);
+    transform: translateX(-5px);
+    /* width: calc(100% + 5px); */
+    /* transition: all ; */
+}
+
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-selected .c-main-nav__link{
+    background-color: var(--color-alpha-dark);
+    transform: none;
+}
+
+.c-main-nav__icon{
+    display: block;
+    width: calc(var(--global-baseline) * 3);
+    height: calc(var(--global-baseline) * 3);
+    margin-right: var(--global-whitespace-xs);
+    fill: var(--color-alpha);
+}
+
+
 
 /*------------------------------------*\
 #UTILITIES
