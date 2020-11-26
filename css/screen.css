@@ -407,6 +407,39 @@ input::placeholder {
     grid-column: 1 / -1;
 }
 
+
+.c-app__topbar{
+    /* display: flex;
+    align-items: center; */
+}
+
+.c-app__topbar--grid{
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.c-app__topbar--grid-item{
+    display: flex;
+    align-items: center;
+}
+
+.c-form-input{
+    all: unset;
+    width: 100%;
+}
+
+.c-main-top__icon{
+    display: block;
+    width: calc(var(--global-baseline) * 3);
+    height: calc(var(--global-baseline) * 3);
+    margin-right: var(--global-whitespace-xs);
+    fill: black;
+}
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
